@@ -59,3 +59,6 @@ class FractionTest(unittest.TestCase):
         self.assertEqual(Fraction(1,18), Fraction(1,12)+Fraction(2,3))
         self.assertEqual(Fraction(1), Fraction(-1,2)+Fraction(-4,2))
         self.assertEqual(Fraction(-3,28), Fraction(3,7)+Fraction(-1,4))
+
+if __name__ == '__main__':
+    unittest.main()
