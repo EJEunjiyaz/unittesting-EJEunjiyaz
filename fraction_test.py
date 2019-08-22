@@ -7,24 +7,24 @@ from fraction import Fraction
 class FractionTest(unittest.TestCase):
     """Test the methods and constructor of the Fraction class. """
 
-    # def test_str(self):
-    #     f = Fraction(3, -1)
-    #     self.assertEqual("-3", f.__str__())
-    #     f = Fraction(0, 5)
-    #     self.assertEqual("0", f.__str__())
-    #     f = Fraction(60, 90)
-    #     self.assertEqual("2/3", f.__str__())
-    #     f = Fraction(1500, 60)
-    #     self.assertEqual("25", f.__str__())
-    #     f = Fraction(1500, 90)
-    #     self.assertEqual("50/3", f.__str__())
-    #     f = Fraction(-80, 20)
-    #     self.assertEqual("-4", f.__str__())
-    #     f = Fraction(36, -60)
-    #     self.assertEqual("-3/5", f.__str__())
-    #     # Constructor should provide default denominator = 1
-    #     f = Fraction(99)
-    #     self.assertEqual("99", f.__str__())
+    def test_str(self):
+        f = Fraction(3, -1)
+        self.assertEqual("-3", f.__str__())
+        f = Fraction(0, 5)
+        self.assertEqual("0", f.__str__())
+        f = Fraction(60, 90)
+        self.assertEqual("2/3", f.__str__())
+        f = Fraction(1500, 60)
+        self.assertEqual("25", f.__str__())
+        f = Fraction(1500, 90)
+        self.assertEqual("50/3", f.__str__())
+        f = Fraction(-80, 20)
+        self.assertEqual("-4", f.__str__())
+        f = Fraction(36, -60)
+        self.assertEqual("-3/5", f.__str__())
+        # Constructor should provide default denominator = 1
+        f = Fraction(99)
+        self.assertEqual("99", f.__str__())
 
     # TODO Write tests for __init__, __eq__, +, *.
     # Here is an example, but you must add more test cases.  
@@ -52,11 +52,15 @@ class FractionTest(unittest.TestCase):
         self.assertFalse(f == h)
         self.assertFalse(g == h)
         
-    
     def test_mul(self):
         self.assertEqual(Fraction(1,2), Fraction(2,3)*Fraction(3,4))
         self.assertEqual(Fraction(1), Fraction(-1,2)*Fraction(-4,2))
         self.assertEqual(Fraction(-3,28), Fraction(3,7)*Fraction(-1,4))
+    
+    def test_sub(self):
+        self.assertEqual(Fraction(0), Fraction(1)-Fraction(1))
+        self.assertEqual(Fraction(3,2), Fraction(-1,2)-Fraction(-4,2))
+        self.assertEqual(Fraction(19,28), Fraction(3,7)-Fraction(-1,4))
 
 if __name__ == '__main__':
     unittest.main()

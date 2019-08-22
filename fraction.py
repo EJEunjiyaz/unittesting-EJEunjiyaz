@@ -69,4 +69,20 @@ class Fraction:
         new_denominator /= gcd_value
         return Fraction(new_numerator, new_denominator)
     
+    def __str__(self):
+        if self.denominator == 1:
+            str = f"{self.numerator:.0f}"
+        else:
+            str = f"{self.numerator:.0f}/{self.denominator:.0f}"
+        return str
     
+    def __sub__(self, frac):
+        """Return the sub of two fractions as a new fraction.
+           Use the standard formula  a/b - c/d = (ad-bc)/(b*d)
+        """
+        new_numerator = self.numerator*frac.denominator - self.denominator*frac.numerator
+        new_denominator = self.denominator*frac.denominator
+        gcd_value = math.gcd(int(new_numerator), int(new_denominator))
+        new_numerator /= gcd_value
+        new_denominator /= gcd_value
+        return Fraction(new_numerator, new_denominator)
