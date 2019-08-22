@@ -81,6 +81,7 @@ class Fraction:
         frac.denominator /= gcd_value2
         return self.numerator == frac.numerator and self.denominator == frac.denominator
     
+
     def __mul__(self, frac):
         """Return the product of two fractions as a new fraction.
            Use the standard formula  a/b * c/d = (a*c)/(b*d)
@@ -92,6 +93,7 @@ class Fraction:
         new_denominator /= gcd_value
         return Fraction(new_numerator, new_denominator)
     
+
     def __str__(self):
         if self.denominator == 1:
             str = f"{self.numerator:.0f}"
@@ -99,6 +101,7 @@ class Fraction:
             str = f"{self.numerator:.0f}/{self.denominator:.0f}"
         return str
     
+
     def __sub__(self, frac):
         """Return the sub of two fractions as a new fraction.
            Use the standard formula  a/b - c/d = (ad-bc)/(b*d)
@@ -109,6 +112,7 @@ class Fraction:
         new_numerator /= gcd_value
         new_denominator /= gcd_value
         return Fraction(new_numerator, new_denominator)
+    
     
     def __neg__(self):
         new_numerator = -self.numerator
