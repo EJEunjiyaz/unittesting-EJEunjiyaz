@@ -86,3 +86,8 @@ class Fraction:
         new_numerator /= gcd_value
         new_denominator /= gcd_value
         return Fraction(new_numerator, new_denominator)
+    
+    def __neg__(self):
+        new_numerator = -self.numerator
+        new_denominator = self.denominator
+        return Fraction(new_numerator, new_denominator)
