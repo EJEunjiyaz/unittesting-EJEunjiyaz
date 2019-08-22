@@ -20,14 +20,16 @@ class Fraction:
         elif denominator == 0:
             if numerator < 0:
                 numerator = -1
-            elif numerator == 0:
-                raise ZeroDivisionError()
-            else:
+            elif numerator > 0:
                 numerator = 1
         
         gcd_value = math.gcd(int(numerator), int(denominator))
-        numerator /= gcd_value
-        denominator /= gcd_value
+        
+        try:
+            numerator /= gcd_value
+            denominator /= gcd_value
+        except:
+            pass
 
         self.numerator = numerator
         self.denominator = denominator
