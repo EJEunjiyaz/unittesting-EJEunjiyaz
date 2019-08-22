@@ -14,6 +14,27 @@ class Fraction:
         """Initialize a new fraction with the given numerator
            and denominator (default 1).
         """
+        if type(numerator) is float or type(denominator) is float:
+            decimal_numerator = 0
+            decimal_denominator = 0
+            if type(numerator) is float:
+                str_numerator = str(numerator)
+                decimal_numerator = str_numerator[::-1].find('.')
+            if type(denominator) is float:
+                str_denominator = str(denominator)
+                decimal_denominator = str_denominator[::-1].find('.')
+            
+            if decimal_numerator >= decimal_denominator:
+                multiply = decimal_numerator
+            else:
+                multiply = decimal_denominator
+            
+            i=0
+            while i < multiply:
+                numerator *= 10
+                denominator *= 10
+                i += 1
+        
         if denominator < 0:
             numerator = -numerator
             denominator = -denominator
