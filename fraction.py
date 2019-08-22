@@ -1,3 +1,5 @@
+import math
+
 class Fraction:
     """A fraction with a numerator and denominator and arithmetic operations.
 
@@ -12,25 +14,59 @@ class Fraction:
         """Initialize a new fraction with the given numerator
            and denominator (default 1).
         """
-        #TODO write this (and remove this TODO comment)
-        pass
+        if denominator < 0:
+            numerator = -numerator
+            denominator = -denominator
+        elif denominator == 0:
+            if numerator < 0:
+                numerator = -1
+            elif numerator == 0:
+                raise ZeroDivisionError()
+            else:
+                numerator = 1
+        
+        gcd_value = math.gcd(int(numerator), int(denominator))
+        numerator /= gcd_value
+        denominator /= gcd_value
 
-    #TODO Write the __add__ method, and remove this TODO comment.
+        self.numerator = numerator
+        self.denominator = denominator
+            
+
     def __add__(self, frac):
         """Return the sum of two fractions as a new fraction.
            Use the standard formula  a/b + c/d = (ad+bc)/(b*d)
         """
-        pass
+        new_numerator = self.numerator*frac.denominator + self.denominator*frac.numerator
+        new_denominator = self.denominator*frac.denominator
+        gcd_value = math.gcd(int(new_numerator), int(new_denominator))
+        new_numerator /= gcd_value
+        new_denominator /= gcd_value
+        return Fraction(new_numerator, new_denominator)
 
-    #TODO write __mul__ and __str__.  Verify __eq__ works with your code.
-    #Optional have fun and overload other operators such as 
-    # __sub__ for f-g
-    # __gt__  for f > g
-    # __neg__ for -f (negation)
-
+        
     def __eq__(self, frac):
         """Two fractions are equal if they have the same value.
            Fractions are stored in proper form so the internal representation
            is unique (3/6 is same as 1/2).
         """
+        gcd_value1 = math.gcd(int(self.numerator), int(self.denominator))
+        self.numerator /= gcd_value1
+        self.denominator /= gcd_value1
+        gcd_value2 = math.gcd(int(frac.numerator), int(frac.denominator))
+        frac.numerator /= gcd_value2
+        frac.denominator /= gcd_value2
         return self.numerator == frac.numerator and self.denominator == frac.denominator
+    
+    def __mul__(self, frac):
+        """Return the product of two fractions as a new fraction.
+           Use the standard formula  a/b * c/d = (a*c)/(b*d)
+        """
+        new_numerator = self.numerator*frac.numerator
+        new_denominator = self.denominator*frac.denominator
+        gcd_value = math.gcd(int(new_numerator), int(new_denominator))
+        new_numerator /= gcd_value
+        new_denominator /= gcd_value
+        return Fraction(new_numerator, new_denominator)
+    
+    
