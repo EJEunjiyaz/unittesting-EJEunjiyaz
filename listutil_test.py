@@ -33,6 +33,10 @@ class ListUtilTest(unittest.TestCase):
     def test_empty(self):
         with self.assertRaises(TypeError):
             unique()
+    
+    def test_two_list(self):
+        with self.assertRaises(TypeError):
+            unique( [1,2,3], [1,2,3] )
 
 
 if __name__ == '__main__':
