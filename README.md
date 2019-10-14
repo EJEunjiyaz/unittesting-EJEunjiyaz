@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/EJEunjiyaz/ unittesting-EJEunjiyaz-.svg?branch=master)](https://travis-ci.com/EJEunjiyaz/unittesting-EJEunjiyaz)
+
 ## Unit Testing Assignment
 
 by Vichyawat Nakarugsa and Bill Gates.
