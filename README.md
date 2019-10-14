@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/EJEunjiyaz/unittesting-EJEunjiyaz-.svg?branch=master)](https://travis-ci.com/EJEunjiyaz/unittesting-EJEunjiyaz)
+[![Build Status](https://travis-ci.com/EJEunjiyaz/unittesting-EJEunjiyaz.svg?branch=master)](https://travis-ci.com/EJEunjiyaz/unittesting-EJEunjiyaz)
 
 ## Unit Testing Assignment
 
