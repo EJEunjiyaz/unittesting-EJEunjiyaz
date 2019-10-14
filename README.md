@@ -50,6 +50,6 @@ Write a table describing your test cases.
 | - 1-1                  | 0/1                 |
 |                        |                     |
 | negative method        | negative fraction   |
-|
+|                        |                     |
 | input string           | raises ValueError   |
 | input many value       | raises TypeError    |
