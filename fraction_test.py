@@ -85,11 +85,13 @@ class FractionTest(unittest.TestCase):
     def test_input_str(self):
         with self.assertRaises(ValueError):
             Fraction("a")
+        with self.assertRaises(ValueError):
             Fraction("b",2)
     
     def test_input_many(self):
         with self.assertRaises(TypeError):
             Fraction(1,1,1,1)
+        with self.assertRaises(TypeError):
             Fraction("a","b",1,5.1,3,3,3,3)
         
 
