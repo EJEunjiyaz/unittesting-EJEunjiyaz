@@ -1,7 +1,7 @@
+## Unit Testing Assignment
+
 [![Build Status](https://travis-ci.com/EJEunjiyaz/unittesting-EJEunjiyaz.svg?branch=master)](https://travis-ci.com/EJEunjiyaz/unittesting-EJEunjiyaz)
 [![codecov](https://codecov.io/gh/EJEunjiyaz/unittesting-EJEunjiyaz/branch/master/graph/badge.svg)](https://codecov.io/gh/EJEunjiyaz/unittesting-EJEunjiyaz)
-
-## Unit Testing Assignment
 
 by Vichyawat Nakarugsa
 
