@@ -3,7 +3,7 @@
 
 ## Unit Testing Assignment
 
-by Vichyawat Nakarugsa and Bill Gates.
+by Vichyawat Nakarugsa
 
 
 ## Test Cases for unique
