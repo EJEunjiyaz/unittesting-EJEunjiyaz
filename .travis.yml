@@ -9,3 +9,9 @@ git:
 # script to run tests. Script can have many commands, one per line.
 script: 
   - python -m unittest discover -p "*_test.py"
+
+env:
+  - CODECOV_TOKEN=dbe0b739-5ff0-48a0-a8ae-b8c8b6bfe3fe
+
+after_success:
+  - codecov
